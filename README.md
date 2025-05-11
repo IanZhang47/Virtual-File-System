@@ -4,23 +4,23 @@ A minimal in-memory file system in Python. It mirrors core OS concepts—hierarc
 
 ## Features
 
-- **Core operations**: `mkdir`, `touch`, `write`, `read`, `ls`, `rm`  
+- **Core operations**: `mkdir`, `touch`, `write`, `read`, `ls`, `rm`, `cd`  
 - **Persistent state**: gzip-pickled snapshot (`.vfs_state.pkl.gz` by default)  
 - **CLI & REPL**: one-shot commands or interactive shell via `vfs`  
 - **Index options**: hand-rolled B-tree vs. `bintrees.RBTree`  
 - **Benchmarks**:
-  - `fs-bench` (read-latency harness)  
-  - `bench-fs` (write/delete + memory usage)  
-  - `compare-trees` (B-tree vs. RB-tree insert/lookup)
+  - `bench_read` (read-latency harness)  
+  - `bench_fs` (write/delete + memory usage)  
+  - `compare_trees` (B-tree vs. RB-tree insert/lookup)
 
 ## Installation
 
 ```bash
-git clone https://github.com/IanZhang47/Virtual-File-System.git
+git clone ttps://github.com/IanZhang47/Virtual-File-System/
 cd filesystem-prototype
 
 python3 -m venv .venv
-source .venv/bin/activate       # on Windows: .venv\Scripts\activate
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
 
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -31,17 +31,23 @@ pip install -e .
 
 After installation you get these commands in your venv’s `bin/`:
 
-| Command         | What it does                                                    |
-| --------------- | --------------------------------------------------------------- |
-| `vfs`           | FS operations & REPL (`vfs mkdir …`, `vfs repl`)                |
+| Command         | Description                                       |
+| --------------- | ------------------------------------------------- |
+| `vfs`           | FS operations & REPL (`vfs mkdir …`, `vfs repl`)  |
 
 ### Examples
 
 ```bash
+# file and directory ops
 vfs mkdir /docs
-vfs write /docs/hello.txt "Hello, FS!"
+vfs write /docs/readme.txt "Hello, FS!"
 vfs ls /docs
-vfs read /docs/hello.txt
+vfs cd /docs
+vfs ls
+vfs rm /docs/readme.txt
+
+# start interactive shell
+vfs repl
 ```
 
 ## Project Structure
@@ -55,7 +61,7 @@ filesystem-prototype/
 │   ├─ node.py                # Inode, Directory, File
 │   ├─ vfs.py                 # mkdir/touch/write/read/ls/rm
 │   ├─ persist.py             # snapshot load/save
-│   ├─ cli.py                 # console-script entry point
+│   ├─ cli.py                 # console-script entry point (adds rm & cd)
 │   └─ bench.py               # built-in read-latency harness
 │
 ├─ scripts/                   # standalone demo & benchmarks
@@ -82,4 +88,3 @@ pytest -q
 ```
 
 All tests should pass with zero warnings.
-
