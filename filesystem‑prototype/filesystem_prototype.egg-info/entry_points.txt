@@ -1,0 +1,5 @@
+[console_scripts]
+bench-fs = scripts.bench_fs:main
+compare-trees = scripts.compare_trees:main
+vfs = fs.cli:main
+vfs-bench = fs.bench:main

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filesystem-prototype"
+version = "0.0.1"
+description = "Teaching prototype of a virtual file‑system"
+authors = [{ name = "Yinuo Zhang" }]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fs*"]
+
+[project.scripts]
+vfs          = "fs.cli:main"
+vfs-bench    = "fs.bench:main"
+bench-fs     = "scripts.bench_fs:main"
+compare-trees= "scripts.compare_trees:main"
+
