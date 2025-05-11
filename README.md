@@ -34,9 +34,6 @@ After installation you get these commands in your venv’s `bin/`:
 | Command         | What it does                                                    |
 | --------------- | --------------------------------------------------------------- |
 | `vfs`           | FS operations & REPL (`vfs mkdir …`, `vfs repl`)                |
-| `fs-bench`      | Built-in read-latency benchmark (`fs.bench:main`)               |
-| `bench-fs`      | Write/delete & memory-usage benchmark (`scripts.bench_fs:main`) |
-| `compare-trees` | Compare B-tree vs. RB-tree (`scripts.compare_trees:main`)       |
 
 ### Examples
 
@@ -45,13 +42,6 @@ vfs mkdir /docs
 vfs write /docs/hello.txt "Hello, FS!"
 vfs ls /docs
 vfs read /docs/hello.txt
-vfs rm /docs/hello.txt
-
-fs-bench --dirs 100 --files 1000 --ops 20000
-
-bench-fs
-
-compare-trees
 ```
 
 ## Project Structure
