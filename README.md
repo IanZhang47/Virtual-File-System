@@ -16,7 +16,7 @@ A minimal in-memory file system in Python. It mirrors core OS concepts—hierarc
 ## Installation
 
 ```bash
-git clone <repo-url> filesystem-prototype
+git clone https://github.com/IanZhang47/Virtual-File-System.git
 cd filesystem-prototype
 
 python3 -m venv .venv
