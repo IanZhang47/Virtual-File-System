@@ -83,8 +83,3 @@ pytest -q
 
 All tests should pass with zero warnings.
 
-
-This project uses the MIT license. See [LICENSE](LICENSE) for details.
-
-```
-```
