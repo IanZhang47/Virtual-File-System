@@ -1,5 +1,3 @@
-# Virtual File‑System Prototype
-````markdown
 # Virtual File-System Prototype
 
 A minimal in-memory file system in Python. It mirrors core OS concepts—hierarchical directories, inodes, metadata—and lets you experiment with different directory-index strategies and measure their impact on lookup, write, and delete performance at scale.
@@ -18,7 +16,7 @@ A minimal in-memory file system in Python. It mirrors core OS concepts—hierarc
 ## Installation
 
 ```bash
-git clone <repo-url> filesystem-prototype
+git clone https://github.com/IanZhang47/Virtual-File-System.git
 cd filesystem-prototype
 
 python3 -m venv .venv
@@ -154,20 +152,4 @@ pytest -q
 
 All tests should pass with zero warnings.
 
----
 
-## Contributing
-
-1. Open an issue or discussion with your idea.
-2. Fork and create a feature branch.
-3. Add tests for new behavior.
-4. Submit a pull request.
-
----
-
-## License
-
-This project uses the MIT license. See [LICENSE](LICENSE) for details.
-
-```
-```
