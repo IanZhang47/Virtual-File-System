@@ -84,7 +84,7 @@ def benchmark(config, n_ops=5_000):
         "del_peak_MB": peak_delete / 1024**2,
     }
 
-if __name__ == "__main__":
+def main():
     configs = [(20, 200), (100, 1000), (300, 2000)]
     results = []
     for cfg in tqdm(configs, desc="Scaling configs"):
@@ -109,4 +109,8 @@ if __name__ == "__main__":
     out_png = "write_delete_latency.png"
     plt.savefig(out_png, dpi=150)
     print(f"\nPlot saved → {out_png}")
+
+if __name__ == "__main__":
+    main()
+
 

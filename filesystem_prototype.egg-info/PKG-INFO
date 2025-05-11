@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: filesystem-prototype
+Version: 0.0.1
+Summary: A virtual file‑system
+Author: Yinuo Zhang
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Virtual File‑System Prototype
